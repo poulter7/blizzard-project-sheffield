@@ -1,0 +1,8 @@
+default:
+ question_template: 'resources/one.question' 
+ static_links: []
+ pool_links: ['news/001c0202.wav', 'news/001c022e.wav', 'news/001c0601.wav', 'news/001c0a03.wav', 'news/001c0e0f.wav', 'news/001c0k13.wav', 'news/001c0n0u.wav', 'news/001c0s0z.wav', 'news/001o032b.wav', 'news/001o0h1n.wav']
+ subjects: ['sd100', 'sd1000', 'sd2000', 'siL100', 'siL1000', 'siL2000', 'siS100', 'siS1000', 'siS200']
+ index: '1'
+
+

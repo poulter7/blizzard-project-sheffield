@@ -23,7 +23,8 @@ class User < ActiveRecord::Base
 
   # Once the user has been created add a default task
   after_create do
-      @sectionDefault = Section.create(:name => "Default Test", :user_id => self.id)
+      @sectionDefault = Section.create(:name => "Default Section", :user_id => self.id)
+      # create compenent tasks
       Task.create(
         :section_id => @sectionDefault.id,
         :index => 0,

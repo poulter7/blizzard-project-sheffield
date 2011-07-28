@@ -10,5 +10,5 @@ Feature: Sign up
 		When I go to sign up page
 		And I fill in "user_email" with "poulter7@gmail.coma"
 		And I press "user_submit"
-		Then I should see "Testing Centre"
+		Then I should see "Listening Test"
 	

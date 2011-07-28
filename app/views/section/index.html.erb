@@ -1,9 +1,9 @@
-<h2>Testing Centre</h2>
+<h2>Listening Test</h2>
 
 <% if @sections.blank? %>
   <p>No current tasks </p>
 <% else %>
-  <p>Current tasks: </p>
+  <p>Current sections: </p>
   <ul id="sections">
     <% @sections.each do |t|%>
       <li><%= link_to t.name, t %> <%=t.tasks_answered_count%>/<%=t.tasks_count%></li>

@@ -4,7 +4,7 @@ module NavigationHelpers
      when /^the home(?: )?page$/
        root_path
      when /^(?:the) test(?:ing)(?: )?page$/
-       section_path
+       section_index_path
      when /^sign up/
        new_user_registration_path
      when /^(?:the )sign in page/

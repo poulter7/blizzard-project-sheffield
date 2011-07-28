@@ -10,7 +10,7 @@ Feature: Sign in
 		Then I should see "Sign in"
 		When I fill in "user_email" with "poulter7@gmail.com"
 		And I press "user_submit"
-		Then I should see "Testing Centre"
+		Then I should see "Listening Test"
 		And I should see "Logout"
 
 

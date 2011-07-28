@@ -7,7 +7,7 @@
 		<!-- The text tag has no special processing 
 		     applied to it and can therefore contain
 		     full HTML if necessary -->
-		<Text></Text>
+		<Text>This is the task brief</Text>
 	</TaskBrief>
 	<TaskContent>
 		<Text>What is the time Mr. Wolf?</Text>
@@ -15,21 +15,21 @@
 			<!-- The sounds clips will not
 			     change dependent on the system 
 			     specified to be tested -->
-			<FixedSoundClip></FixedSoundClip>
-			<FixedSoundClip></FixedSoundClip>
+			<FixedSoundClip/>
+			<FixedSoundClip/>
 			<!-- The SinglePlay attribute is
 			     specific to a sound clip and 
 			     means the the sound may only 
 			     be listened to once-->
-			<FixedSoundClip SinglePlay=1></FixedSoundClip>
-			<FixedSoundClip SinglePlay=1></FixedSoundClip>
+			<FixedSoundClip SinglePlay=1/>
+			<FixedSoundClip SinglePlay=1/>
 		</References>
 		<Text>Now listen to this:</Text>
 		<Variants>
 			<!-- This sound clip will be of 
 			     that provided by the system 
 			     being tested -->
-			<SystemSoundClip></SystemSoundClip>
+			<SystemSoundClip/>
 		</Variants>
 		<Text>Score this</Text>
 		<Answer>

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110711162506) do
+ActiveRecord::Schema.define(:version => 20110728145822) do
+
+  create_table "listeningtests", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "questions", :force => true do |t|
     t.string   "text"
@@ -26,8 +32,12 @@ ActiveRecord::Schema.define(:version => 20110711162506) do
   end
 
   create_table "sections", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "name"
+    t.integer  "listeningtest_id"
+    t.text     "static_links"
+    t.text     "pool_links"
+    t.text     "subjects"
+    t.string   "question_template"
+    t.integer  "index"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20110711162506) do
     t.datetime "updated_at"
     t.boolean  "admin"
     t.string   "usergroup"
+    t.string   "listenergroup"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

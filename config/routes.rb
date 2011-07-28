@@ -14,7 +14,6 @@ Blizzard::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
   resources :section do
     resources :task
   end

@@ -40,4 +40,5 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'escape_utils'
+  gem 'turn'
 end
