@@ -1,0 +1,15 @@
+<h2>User list</h2>
+<%= form_for User.new do |u|%>
+  <% User::USER_GROUPS.each do |ug| %>
+    <h3><%=ug.first%></h3>
+    <%if ug.second!='A'%>
+      <p>
+      <%= u.label :email, 'Email' %><%=u.text_field :email%>
+      <%= submit_tag 'Add user',:name => "new_#{ug.second}",:confirm =>'Are you sure you want to create this user?'%> <br/>
+    <%end%>
+    <span class="in_progress">In progress</span></p>
+    <% User.find_all_by_usergroup(ug.second).each do |u| %>
+      <%= u.email %><br/>
+    <%end%>
+  <%end%>
+<%end%>

@@ -1,0 +1,21 @@
+{ "task": {
+	"taskbrief": [
+		{"text": "The task <b>brief</b>"}
+	],
+	"taskcontent": [
+		{"text": "What is the time <i>you?</i>"},
+		{"references": [
+			{"fixedsoundclip":  "natural/news/001c0202.wav"},
+		{"text": "What is the time <i>you?</i>"},
+		{"text": "What is the time <i>you?</i>"},
+			{"fixedsoundclip":  "natural/news/001c0201.wav"},
+			{"fixedsoundclip":  "natural/news/001c0212.wav"}
+		]},
+		{"text": "Now listen to this."},
+		{"variants": [
+			{"systemsoundclip": "news/001c02012.wav"}
+		]},
+		{"text": "Score this"},
+		{"answer": "fivepointscale"}
+	]
+}}

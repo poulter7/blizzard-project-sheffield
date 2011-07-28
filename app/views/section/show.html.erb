@@ -1,0 +1,13 @@
+<h2>Task list: <%= @section.name%></h2>
+<p>Tasks:</p>
+<ul>
+<% @tasks.each do |t|%>
+  <li>
+  <% if !t.answered %>
+    <%= link_to "Question #{t.index+1}", [@section,t] %>
+  <%else%>
+    <%= "Question #{t.index+1}" %>
+  <%end%>
+  </li>
+<% end %>
+</ul>

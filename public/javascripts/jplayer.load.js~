@@ -1,0 +1,11 @@
+$(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+	    wav: "http://www.nch.com.au/acm/8k16bitpcm.wav"
+          });
+        },
+        swfPath: "/public/javascripts",
+        supplied: "wav"
+      });
+    });

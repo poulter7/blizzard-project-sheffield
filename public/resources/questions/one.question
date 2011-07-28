@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- This is a sample task -->
+<Task>
+	<!-- The task brief is shown for the 
+	     first task in a section of this task -->
+	<TaskBrief>
+		<!-- The text tag has no special processing 
+		     applied to it and can therefore contain
+		     full HTML if necessary -->
+		<Text></Text>
+	</TaskBrief>
+	<TaskContent>
+		<Text>What is the time Mr. Wolf?</Text>
+		<References>
+			<!-- The sounds clips will not
+			     change dependent on the system 
+			     specified to be tested -->
+			<FixedSoundClip></FixedSoundClip>
+			<FixedSoundClip></FixedSoundClip>
+			<!-- The SinglePlay attribute is
+			     specific to a sound clip and 
+			     means the the sound may only 
+			     be listened to once-->
+			<FixedSoundClip SinglePlay=1></FixedSoundClip>
+			<FixedSoundClip SinglePlay=1></FixedSoundClip>
+		</References>
+		<Text>Now listen to this:</Text>
+		<Variants>
+			<!-- This sound clip will be of 
+			     that provided by the system 
+			     being tested -->
+			<SystemSoundClip></SystemSoundClip>
+		</Variants>
+		<Text>Score this</Text>
+		<Answer>
+			<FivePointScale/>
+			<!--
+			<PointScale MaxPoint=5 MinPoint=1/>
+			<ReferenceAlphabet/> Provide A,B,C,D for each 
+					of the reference samples provided
+			<VariantAlphabet/> Provide A,B,C,D for each 
+					of the variant samples probided
+			<TextField/>
+			<TextBox/>
+			-->
+		</Answer>
+	</TaskContent>
+</Task>

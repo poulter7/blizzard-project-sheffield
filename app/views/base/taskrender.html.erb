@@ -1,0 +1,52 @@
+<h1>Sample task render</h1>
+<% 
+def display(input)
+  case input.first.first
+    when "text"
+      return input.first.second
+    when "fixedsoundclip"
+      return input.first.second
+    when "systemsoundclip"
+      return input.first.second
+    when "answer"
+      return input.first.second
+    else return "cannot display #{input}"
+  end
+end
+%>
+<% @taskDescription=JSON.parse(File.read("public/resources/questions/q.json"))['task']%>
+
+<% if 1
+  # if this is the first task of the section print the description
+%>
+<!-- task brief -->
+<h2>Task Brief</h2>
+<% @taskDescription['taskbrief'].each do |t|%>
+  <%= custom_helper t.first %><br/>
+<% end%>
+<% end %>
+
+<!-- print main content -->
+<h2>Task content</h2>
+<% @taskDescription['taskcontent'].each do |t|%>
+  <% if !t.first.second.kind_of?(Array)%>
+    <%=display t %><br/>
+  <%else%>
+    <%
+    case t.first.first
+        when "references"
+          @references = t.first.second
+        %>
+        <%
+        when "variants"
+          @variants = t.first.second
+        %>
+        <%
+    end
+    %>
+    <% t.first.second.each do |ts|%>
+      <%=display ts%>
+      <br/>
+    <% end %>
+  <%end%>
+<% end %>

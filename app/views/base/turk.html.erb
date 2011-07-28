@@ -1,0 +1,31 @@
+<%
+  require 'amazon/webservices/mturk/question_generator'
+#include Amazon::WebServices::MTurk
+%>
+<h2>Turk</h2>
+<p>Turk stuff</p>
+<%def createHelloWorld
+  title = "Answer a question"
+  desc = "This is a HIT created by the Amazon Mechanical Turk SDK for Ruby.  Please answer the question."
+  keywords = "sample, SDK, hello"
+  numAssignments = 1
+  rewardAmount = 0.05 # 5 cents
+
+  question = QuestionGenerator.build(:Basic) do |q|
+    q.ask "What is the weather like right now in Seattle, WA?"
+  end
+
+  puts question
+
+  result = @mturk.createHIT( :Title => title,
+                    :Description => desc,
+                    :MaxAssignments => numAssignments,
+                    :Reward => { :Amount => rewardAmount, :CurrencyCode => 'USD' },
+                    :Question => question,
+                    :Keywords => keywords )
+
+  puts "Created HIT: #{result[:HITId]}"
+  puts "Url: #{getHITUrl( result[:HITTypeId] )}"
+  end
+%>
+<%=createHelloWorld%> 
