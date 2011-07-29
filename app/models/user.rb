@@ -18,34 +18,13 @@ class User < ActiveRecord::Base
   before_validation(:on => :create) do
       self.password="password"
       self.password_confirmation="password"
+      # FIXME this will set all users as volunteers
       self.usergroup='V'
+      # TODO assign a valid listenergroup
   end
 
-  # Once the user has been created add a default task
+  # Once the user has been created add them as a paricipant to the default test and assign a listener group
   after_create do
-      @sectionDefault = Section.create(:name => "Default Section", :user_id => self.id)
-      # create compenent tasks
-      Task.create(
-        :section_id => @sectionDefault.id,
-        :index => 0,
-        :question_id => 1,
-        :subject_id=> 3,
-        :elements => [1,1,2]
-      )
-      Task.create(
-        :section_id => @sectionDefault.id,
-        :index => 1,
-        :question_id => 2,
-        :subject_id=> 3,
-        :elements => [1]
-      )
-      Task.create(
-        :section_id => @sectionDefault.id,
-        :index => 2,
-        :question_id => 2,
-        :subject_id=> 1,
-        :elements => [2,1]
-      )
 
   end
 

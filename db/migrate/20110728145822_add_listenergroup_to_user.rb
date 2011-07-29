@@ -1,6 +1,6 @@
 class AddListenergroupToUser < ActiveRecord::Migration
   def self.up
-    add_column :users, :listenergroup, :string
+    add_column :users, :listenergroup, :integer
   end
 
   def self.down

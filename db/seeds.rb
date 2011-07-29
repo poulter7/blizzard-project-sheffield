@@ -5,9 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
-Question.create([{:text =>'whoami?' }, {:text => 'whoareyou?'}])
-Resource.create([{:location => 'natural_1.wav'}, {:location => 'natural_2.wav'}, {:location => 'natural_3.wav'}])
 
+# setup the default Listening test and its constituant sections
 test = Listeningtest.create()
 static_links = ['sd2000/news/001c0n0u.wav','sd2000/news/001c0212.wav','sd2000/news/001c0n0u.wav','sd2000/news/001c0212.wav']
 pool_links = ['news/001c0n0u.wav','news/001c0212.wav','news/001c0n0u.wav','news/001c0212.wav']

@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# Pariticpants
+one: 
+  user: one
+  section: default
+  listenergroup: 0
+
+two: 
+  user: two
+  section: default
+  listenergroup: 2 

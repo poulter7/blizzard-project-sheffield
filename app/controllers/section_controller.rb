@@ -2,7 +2,7 @@ class SectionController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @sections = Section.find_all_by_user_id(warden.user.id)
+    @listeningtest = Listeningtest.find_by_user_id(warden.user.id)
   end
 
   def show
