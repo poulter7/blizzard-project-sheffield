@@ -1,12 +1,16 @@
 <h2>Listening Test</h2>
 
-<% if @sections.blank? %>
-  <p>No current tasks </p>
+<% if @participant.blank? %>
+You are not a member of any listening tests
 <% else %>
-  <p>Current sections: </p>
-  <ul id="sections">
-    <% @sections.each do |t|%>
-      <li><%= link_to t.name, t %> <%=t.tasks_answered_count%>/<%=t.tasks_count%></li>
-    <%end%>
-  </ul>
+  <% if @sections.blank? %>
+    <p>No current tasks </p>
+  <% else %>
+    <p>Current sections: </p>
+    <ul id="sections">
+      <% @sections.each do |t|%>
+        <li><%= link_to "Section #{t.id}", t %> <%=t.tasks_answered_count%>/<%=t.tasks_count%></li>
+      <%end%>
+    </ul>
+  <%end%>
 <%end%>

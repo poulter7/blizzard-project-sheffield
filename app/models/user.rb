@@ -20,11 +20,14 @@ class User < ActiveRecord::Base
       self.password_confirmation="password"
       # FIXME this will set all users as volunteers
       self.usergroup='V'
-      # TODO assign a valid listenergroup
   end
 
   # Once the user has been created add them as a paricipant to the default test and assign a listener group
   after_create do
+
+    section = (Section.find :all)[0]
+    # the listener group is assigned in the Participant model
+    part = Participant.create(:user_id => self.id, :section_id => section.id)
 
   end
 

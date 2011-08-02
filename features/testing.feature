@@ -8,13 +8,13 @@ Feature: Testing
 
 	Scenario: User has signed in and wants to take their default test
 		Then I should see "Listening Test"
-		And I should see "Default Section"
-		When I follow "Default Section"
-		Then I should see "Default Section"
-		And I should see "Question 1"
-		And I should see "Question 2"
-		When I follow "Question 1"
-		Then I should see "whoami?"
+		And I should see "Section 1"
+		When I follow "Section 1"
+		Then I should see "Section 1"
+		#		And I should see "Question 1"
+		#And I should see "Question 2"
+		#When I follow "Question 1"
+		#Then I should see "whoami?"
 		
 	Scenario: User should be able to see questions with different number of subjects
 		When I follow "Default Section"
