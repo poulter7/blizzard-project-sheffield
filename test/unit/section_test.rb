@@ -7,6 +7,7 @@ class SectionTest < ActiveSupport::TestCase
     @participant_two= participants(:two)
   end
 
+
   test "demo participant is the correct group" do
     assert @participant.listenergroup == 0
   end
@@ -21,7 +22,9 @@ class SectionTest < ActiveSupport::TestCase
     assert participants == [1,0,2], "#{participants}"
   end
 
-  
+  ############################
+  #
+  ############################
 
 
   ############################

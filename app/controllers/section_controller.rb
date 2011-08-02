@@ -19,7 +19,11 @@ class SectionController < ApplicationController
     if @section.nil?
       redirect_to :action => 'index'
     else
-      @tasks = @section.tasks
+      # redirect to the task that should be being done
+      # index = @section.nextIndex
+      index = 1
+      redirect_to section_task_answer_path @section.id, :index => index
     end
   end
+
 end

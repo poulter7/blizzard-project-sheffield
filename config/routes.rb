@@ -15,9 +15,10 @@ Blizzard::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :section do
-    resources :task
+#    resources :task
   end
 
+  match "section/:section_id/task/:index/answer" => "task#answer", :as => 'section_task_answer'
   # Sample resource route with options:
   #   resources :products do
   #     member do
