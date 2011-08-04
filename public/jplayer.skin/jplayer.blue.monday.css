@@ -71,38 +71,46 @@ div.jp-interface ul.jp-controls a {
 	overflow:hidden;
 	text-indent:-9999px;
 }
+span.jp-index,
 a.jp-play,
 a.jp-pause {
 	width:40px;
 	height:40px;
 	z-index:1;
 }
+span.jp-index,
 div.jp-audio div.jp-type-single a.jp-play,
 div.jp-audio div.jp-type-single a.jp-pause {
 	top:20px;
 	left:40px;
 }
+span.jp-index,
 div.jp-audio div.jp-type-playlist a.jp-play,
 div.jp-audio div.jp-type-playlist a.jp-pause {
 	top:20px;
 	left:48px;
 }
+span.jp-index,
 div.jp-video a.jp-play,
 div.jp-video a.jp-pause {
 	top:15px;
 }
+span.jp-index,
 div.jp-video-270p div.jp-type-single a.jp-play,
 div.jp-video-270p div.jp-type-single a.jp-pause {
 	left:195px;
 }
+span.jp-index,
 div.jp-video-270p div.jp-type-playlist a.jp-play,
 div.jp-video-270p div.jp-type-playlist a.jp-pause {
 	left:220px;
 }
+span.jp-index,
 div.jp-video-360p div.jp-type-single a.jp-play,
 div.jp-video-360p div.jp-type-single a.jp-pause {
 	left:275px;
 }
+span.jp-index,
 div.jp-video-360p div.jp-type-playlist a.jp-play,
 div.jp-video-360p div.jp-type-playlist a.jp-pause {
 	left:300px;

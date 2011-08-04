@@ -1,10 +1,16 @@
 class TaskController < ApplicationController
   before_filter :authenticate_user!
 
+  def answer
+    @section = Section.find(params[:section_id])
+
+    @participant = Participant.find_by_user_id(warden.user.id)
+    @task = Task.new
+    render :show
+  end
 
   def show
     # TODO redirect if already answered
-    @task = Task.find(params[:id])
   end
 #
 #  def update
@@ -23,11 +29,5 @@ class TaskController < ApplicationController
 #    end
 #  end
 #
-  def answer
-    @section = Section.find(params[:section_id])
-
-    @task = Task.new
-    render :show
-  end
 
 end

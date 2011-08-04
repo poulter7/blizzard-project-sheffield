@@ -28,19 +28,14 @@ class User < ActiveRecord::Base
 
     test = Listeningtest.find(:all)[0]
     section = Listeningtest.find(:all)[0]
-    if test.nil?
-      test = Listeningtest.create()
+    if test.nil? && section.nil?
+      # Seed the database with defaults
+      require Rails.root.join('db','seeds.rb')
+      test = Listeningtest.find(:all)[0]
+      section = Listeningtest.find(:all)[0]
     end
-    if section.nil?
-      static_links = ['sd2000/news/001c0n0u.wav','sd2000/news/001c0212.wav','sd2000/news/001c0n0u.wav','sd2000/news/001c0212.wav']
-      pool_links = ['news/001c0n0u.wav','news/001c0212.wav','news/001c0n0u.wav','news/001c0212.wav']
-      subjects = ['sd2000','sd100','sd1000']
-      section = Section.create(:listeningtest_id => test.id, :question_template => 'resources/question.xml', :index => 1, :static_links => static_links, :pool_links => pool_links, :subjects => subjects)
-    end
-    
-    # the listener group is assigned in the Participant model
-    part = Participant.create(:user_id => self.id, :section_id => section.id)
 
+    Participant.create(:user_id => self.id, :section_id => section.id)
   end
 
 

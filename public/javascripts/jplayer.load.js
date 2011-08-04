@@ -6,7 +6,7 @@ $(document).ready(function(){
       $("#jquery_jplayer_"+inte).jPlayer({
         ready: function () {
           $(this).jPlayer("setMedia", {
-            wav: "/sound/"+$(this).attr("location")
+            wav: "/systems/"+$(this).attr("location")
           });
         },
         swfPath: "/public/javascripts",

@@ -7,8 +7,7 @@ Feature: Sign up
 		Then I should see "Sign up"
 
 	Scenario: Add a new user
-		When I go to sign up page
-		And I fill in "user_email" with "poulter7@gmail.coma"
+		When I go to sign up
+		And I fill in "user_email" with "poulter7@gmail.com"
 		And I press "user_submit"
 		Then I should see "Listening Test"
-	

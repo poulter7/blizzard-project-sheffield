@@ -59,6 +59,10 @@ class SectionTest < ActiveSupport::TestCase
 
   end
 
+  test "correct system is given" do
+    assert @section.getSystem(@participant, 1) == 'sd1000'
+  end
+
   test "correct file is given based on the user and their location in the section" do
     assert @section.getFile(@participant, 1) == 'sd1000/news/001c022e.wav'
   end

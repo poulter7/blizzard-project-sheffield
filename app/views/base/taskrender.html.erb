@@ -14,7 +14,7 @@ def display(input)
   end
 end
 %>
-<% @taskDescription=JSON.parse(File.read("public/resources/questions/q.json"))['task']%>
+<% @taskDescription=JSON.parse(File.read("resources/question_templates/q.json"))['task']%>
 
 <% if 1
   # if this is the first task of the section print the description
@@ -22,7 +22,7 @@ end
 <!-- task brief -->
 <h2>Task Brief</h2>
 <% @taskDescription['taskbrief'].each do |t|%>
-  <%= custom_helper t.first %><br/>
+  <%= display t.first %><br/>
 <% end%>
 <% end %>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110729144908) do
+ActiveRecord::Schema.define(:version => 20110803233436) do
 
   create_table "listeningtests", :force => true do |t|
     t.integer  "user_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20110729144908) do
     t.integer  "listenergroup"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "answers"
   end
 
   create_table "questions", :force => true do |t|

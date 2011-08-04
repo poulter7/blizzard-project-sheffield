@@ -8,8 +8,8 @@ You are not a member of any listening tests
   <% else %>
     <p>Current sections: </p>
     <ul id="sections">
-      <% @sections.each do |t|%>
-        <li><%= link_to "Section #{t.id}", t %> <%=t.tasks_answered_count%>/<%=t.tasks_count%></li>
+      <% @sections.each do |s|%>
+        <li><%= link_to "Section #{s.id}", s %> <%=@participant.answeredCount%>/<%=s.latinSqSize%>
       <%end%>
     </ul>
   <%end%>

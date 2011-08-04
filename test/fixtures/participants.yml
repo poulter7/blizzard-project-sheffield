@@ -5,6 +5,7 @@ one:
   user: one
   section: default
   listenergroup: 0
+  answers: <%=[1,2,3,nil]%> 
 
 two: 
   user: two

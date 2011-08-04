@@ -11,19 +11,17 @@
 	</TaskBrief>
 	<TaskContent>
 		<Text>What is the time Mr. Wolf?</Text>
-		<References>
-			<!-- The sounds clips will not
-			     change dependent on the system 
-			     specified to be tested -->
-			<FixedSoundClip/>
-			<FixedSoundClip/>
-			<!-- The SinglePlay attribute is
-			     specific to a sound clip and 
-			     means the the sound may only 
-			     be listened to once-->
-			<FixedSoundClip SinglePlay=1/>
-			<FixedSoundClip SinglePlay=1/>
-		</References>
+		<!-- The sounds clips will not
+		     change dependent on the system 
+		     specified to be tested -->
+		<FixedSoundClip/>
+		<FixedSoundClip/>
+		<!-- The SinglePlay attribute is
+		     specific to a sound clip and 
+		     means the the sound may only 
+		     be listened to once-->
+		<FixedSoundClip SinglePlay=1/>
+		<FixedSoundClip SinglePlay=1/>
 		<Text>Now listen to this:</Text>
 		<Variants>
 			<!-- This sound clip will be of 

@@ -18,25 +18,35 @@ class Section < ActiveRecord::Base
     return partCounts
   end
 
-  def getPlaylist(user)
-    # here 1 is taken from listener group and trackID
-    # to return to zero indexing
-    # get order systems are to be played in
-    # ['system', ...]
-    subjectOrdering = latinsquare[user.listenergroup].map{|sID|  subjects[sID-1]} 
+  # here 1 is taken from listener group and trackID
+  # to return to zero indexing
+  # get order systems are to be played in
+  # ['system', ...]
+  def subjectOrdering(participant)
+    return latinsquare[participant.listenergroup].map{|sID|  subjects[sID-1]} 
+  end
 
     # get the file and system together
     # ['system/fileloc', ...]
-    return subjectOrdering.zip(pool_links).map{|sub,file| File.join(sub,file)}
+  def getPlaylist(participant)
+    return subjectOrdering(participant).zip(pool_links).map{|sub,file| File.join(sub,file)}
 
   end
 
-  def getFile(user, id)
-    return self.getPlaylist(user)[id]
+  def getFile(participant, index)
+    return self.getPlaylist(participant)[index]
+  end
+
+  def getClip(index)
+    pool_links[index%latinSqSize]
   end
 
   def latinSqSize
     return subjects.count
+  end
+
+  def getSystem(participant, index)
+    return subjectOrdering(participant)[index]
   end
 
   # load the latin square for this section
@@ -55,15 +65,5 @@ class Section < ActiveRecord::Base
     return @laSquare
   end
 
-  def tasks
-      return Task.find_all_by_section_id(id).sort {|x,y| x.index <=> y.index}
-  end
 
-  def tasks_count
-    return tasks.count
-  end
-
-  def tasks_answered_count
-    return tasks.count {|t| t.answered}
-  end
 end

@@ -1,0 +1,28 @@
+{ "task": {
+	"taskbrief": [
+		{"text": "The task <b>brief</b>"}
+	],
+	"taskcontent": [
+		{"text": "What is the time <i>you?</i>"},
+		{"soundclip": {
+			"synth": "natural",
+			"clip": "news/001c020l.wav"
+			}},
+		{"soundclip":  {
+			"synth": "natural",
+			"clip": "news/001c0202.wav",
+			"playonce": "true"
+			}},
+		{"soundclip": {
+			"synth": "natural",
+			"clip": "news/001c0212.wav"
+			}},
+		{"text": "Now listen to this clip"},
+		{"soundclip": {
+				
+			}},
+		{"text": "Where 5 is <b>most like</b> and 1 is <b>least like</b>. How similar do you feel the last clip is to the reference clips?"},
+		{"answer": "five-point-scale"}
+	]
+}}
+

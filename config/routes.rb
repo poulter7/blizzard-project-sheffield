@@ -1,4 +1,5 @@
 Blizzard::Application.routes.draw do
+
   devise_for :users
 
   # The priority is based upon order of creation:
@@ -12,13 +13,14 @@ Blizzard::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
+  match "section/:section_id/task/:index/answer" => "task#answer", :as => 'answer_section_task'
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :section do
-#    resources :task
+    resources :task
   end
+  resources :participant
 
-  match "section/:section_id/task/:index/answer" => "task#answer", :as => 'section_task_answer'
   # Sample resource route with options:
   #   resources :products do
   #     member do

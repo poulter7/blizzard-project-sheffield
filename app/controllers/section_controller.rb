@@ -15,14 +15,18 @@ class SectionController < ApplicationController
   def show
     # TODO instead of showing anything about a particular section
     # render the content of the current question
+    @participant = Participant.find_by_user_id(warden.user.id)
     @section = Section.find(params[:id])
+    @currentQuestion = @participant.currentQuestion
     if @section.nil?
       redirect_to :action => 'index'
     else
       # redirect to the task that should be being done
-      # index = @section.nextIndex
-      index = 1
-      redirect_to section_task_answer_path @section.id, :index => index
+      if @currentQuestion
+        redirect_to answer_section_task_path @section.id, :index => @currentQuestion
+      else
+        redirect_to section_index_path
+      end
     end
   end
 

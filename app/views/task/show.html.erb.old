@@ -1,0 +1,30 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.min.js' %>
+  <%= javascript_include_tag 'jquery.jplayer.min.js' %>
+  <%= 
+    javascript_include_tag 'jplayer.load.js' 
+  %>
+  <%= stylesheet_link_tag '../jplayer.skin/jplayer.blue.monday.css' %>
+<% end %>
+
+<h2># <%= @task.index+1 %></h2>
+<!-- ask the question -->
+Question:<br/>
+<span class="question"><%= @task.question%></span>
+
+<!-- display comparison elements -->
+
+<%= render :partial => 'player', :collection => @task.resource_locations %>
+
+<!-- subject of the question -->
+<p> Answer to:<%=@task.subject%><br/>
+<%= render :partial => 'player', :object => @task.subject, :locals => {:player_counter => @task.resources.length} %>
+</p>
+
+<!-- answer box -->
+Answer:
+<%= form_for [@task.section,@task] do |t| %>
+  <%= select(:task,:answer,@task.resources.map {|r| [r.location, r.id]} ) %>
+    <%= t.submit "Next question" %>
+<% end %>
+<!-- submit box -->

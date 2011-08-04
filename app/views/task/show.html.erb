@@ -1,30 +1,72 @@
-<% content_for :head do %>
-  <%= javascript_include_tag 'jquery.min.js' %>
-  <%= javascript_include_tag 'jquery.jplayer.min.js' %>
-  <%= 
-    javascript_include_tag 'jplayer.load.js' 
-  %>
-  <%= stylesheet_link_tag '../jplayer.skin/jplayer.blue.monday.css' %>
+<% # ensure the correct javascript is present
+  content_for :head do %>
+<%= javascript_include_tag 'jquery.min.js' %>
+<%= javascript_include_tag 'jquery.jplayer.min.js' %>
+<%= javascript_include_tag 'jplayer.load.js' %>
+<%= stylesheet_link_tag '../jplayer.skin/jplayer.blue.monday.css' %>
+<% end  
+  @playcounter = 0
+  @questionIndex = params[:index].to_i
+  @variants=[]
+  @variantKey='A'
+
+def display_soundclip(sc)
+  synth = sc['synth']
+  synth ||= @section.getSystem(@participant, @questionIndex)
+  clip = sc['clip']
+  clip ||= @section.getClip(@questionIndex)
+  location = File.join(synth, clip) 
+  variable=nil
+  if sc['variant'] == 'true' then 
+    @variants << sc
+    variable = @variantKey
+    sc['alpha'] = @variantKey
+
+    @variantKey=@variantKey.succ
+  end
+  %><%=
+  render :partial => 'player', :object => sc, :locals => {:player_counter => @playcounter, :synth => synth, :variable => variable, :location => location}
+  %><%
+  @playcounter+=1
+end
+
+def display_answer(an)
+%><%=
+render :partial => 'answer', :object => an, :locals => {:variants=> @variants, :index => @questionIndex, :participant => @participant}
+%><%
+end
+
+def display(input)
+  in_type = input.first.first
+  in_content = input.first.second
+  case in_type
+    when "text"
+      %><%=in_content%><%
+      return nil
+    when "soundclip"
+      display_soundclip(in_content)
+      return nil
+    when "answer"
+      display_answer(in_content)
+      return nil
+    else return "cannot display #{input}"
+  end
+end
+%>
+<% @taskDescription=JSON.parse(File.read(@section.question_template))['task']%>
+
+<% # if this is the first question of this section give an intro
+  if params[:index].to_i == 0 %>
+
+<!-- task brief -->
+<h2>Task Brief</h2>
+<% @taskDescription['taskbrief'].each do |t|%>
+  <% display t %><br/>
+<% end%>
 <% end %>
 
-<h2># <%= @task.index+1 %></h2>
-<!-- ask the question -->
-Question:<br/>
-<span class="question"><%= @task.question%></span>
-
-<!-- display comparison elements -->
-
-<%= render :partial => 'player', :collection => @task.resource_locations %>
-
-<!-- subject of the question -->
-<p> Answer to:<%=@task.subject%><br/>
-<%= render :partial => 'player', :object => @task.subject, :locals => {:player_counter => @task.resources.length} %>
-</p>
-
-<!-- answer box -->
-Answer:
-<%= form_for [@task.section,@task] do |t| %>
-  <%= select(:task,:answer,@task.resources.map {|r| [r.location, r.id]} ) %>
-    <%= t.submit "Next question" %>
+<!-- task output -->
+<h2>Task content</h2>
+<% @taskDescription['taskcontent'].each do |t|%>
+    <%=display t %><br/>
 <% end %>
-<!-- submit box -->
