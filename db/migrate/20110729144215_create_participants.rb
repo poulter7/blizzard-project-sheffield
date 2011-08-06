@@ -2,8 +2,7 @@ class CreateParticipants < ActiveRecord::Migration
   def self.up
     create_table :participants do |t|
       t.references :user
-      t.references :section
-      t.integer    :listenergroup
+      t.references :listeningtest
       t.timestamps
     end
   end

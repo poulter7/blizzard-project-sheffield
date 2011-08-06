@@ -27,15 +27,13 @@ class User < ActiveRecord::Base
 
 
     test = Listeningtest.find(:all)[0]
-    section = Listeningtest.find(:all)[0]
-    if test.nil? && section.nil?
+    if test.nil?
       # Seed the database with defaults
       require Rails.root.join('db','seeds.rb')
       test = Listeningtest.find(:all)[0]
-      section = Listeningtest.find(:all)[0]
     end
 
-    Participant.create(:user_id => self.id, :section_id => section.id)
+    Participant.create(:user_id => self.id, :listeningtest_id => test.id)
   end
 
 

@@ -1,0 +1,16 @@
+{ "task": {
+	"taskbrief": [
+		{"text": "In this test, we just wish to determine whether or not the words you hear are understandable. In each part you will listen to a U.S. street address, and then type in what you heard. Please complete all parts of this section even if it is difficult to enter a response. Do not be concerned about \"right\" or \"wrong\" answers. Just type in what you hear. Please try to enter all of the words you hear, but do not enter any comments. If you cannot hear any sound coming out of the headphones, please make sure that your browser can handle embedded audio players (all current browsers do), and that you have not turned javascript off. If you can hear the audio, but you cannot understand ANY of the words, just write \"<>\" (without the quotes) and nothing else. If you can understand some, but not all of the words, just type in the ones you heard."}
+	],
+	"taskintroduction":[
+		{"text": "Please try to enter all of the words you hear, but do not enter any comments. If you cannot hear any sound coming out of the headphones, please make sure that your browser can handle embedded audio players (all current browsers do), and that you have not turned javascript off. If you can hear the audio, but you cannot understand ANY of the words, just write \"<>\" (without the quotes) and nothing else. If you can understand some, but not all of the words, just type in the ones you heard."}
+	],
+	"taskcontent": [
+		{"text": "Listen to the audio file by clicking on the play button below, and type what you hear into the text box. "},
+		{"soundclip": {
+				
+			}},
+		{"text": "Now choose a score for how natural or unnatural the sentence sounded. The scale is from 1 [Completely Unnatural] to 5 [Completely Natural]."},
+		{"answer": "text-area"}
+	]
+}}

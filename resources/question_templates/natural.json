@@ -1,0 +1,16 @@
+{ "task": {
+	"taskbrief": [
+		{"text": "In this section, after you listen to each sentence, you will choose a score for the audio file you've just heard. This score should reflect your opinion of how natural or unnatural the sentence sounded. You should not judge the grammar or content of the sentence, just how it sounds."}
+
+	],
+	"taskintroduction":[
+	],
+	"taskcontent": [
+		{"text": "Listen to the example below."},
+		{"soundclip": {
+				
+			}},
+		{"text": "Now choose a score for how natural or unnatural the sentence sounded. The scale is from 1 [Completely Unnatural] to 5 [Completely Natural]."},
+		{"answer": "five-point-scale"}
+	]
+}}

@@ -13,13 +13,16 @@ Blizzard::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
-  match "section/:section_id/task/:index/answer" => "task#answer", :as => 'answer_section_task'
+  match "section/:section_id/answer/:index/answer" => "answer#answer", :as => 'answer_section_task'
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :section do
-    resources :task
+    resources :answer
   end
+  resources :answer
   resources :participant
+
+  resources :listeningtest
 
   # Sample resource route with options:
   #   resources :products do

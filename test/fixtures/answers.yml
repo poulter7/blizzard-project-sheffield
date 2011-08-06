@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+a_one:
+  participant: p_one
+  section: s_one
+  listenergroup: 0
+  answer_list: ['abc', 'abc', 'bcd']
+a_one_a:
+  participant: p_two
+  section: s_one
+  listenergroup: 2
+  answer_list: ['abc', 'abc', 'bcd']
+
+a_two:
+  participant: p_one
+  section: s_two
+  listenergroup: 1
+  answer_list: ['abc', 'abc', 'bcd']
+a_two_a:
+  participant: p_two
+  section: s_two
+  listenergroup: 0
+  answer_list: ['abc', 'abc', 'bcd']

@@ -10,43 +10,52 @@ class Section < ActiveRecord::Base
 
     # find all the participants taking part in this section
     # group by listener groups
-    r = Participant.count(:conditions => "section_id = #{self.id}", :group => 'listenergroup')
+    lgroup = Answer.count(:conditions => "section_id = #{self.id}", :group => 'listenergroup')
     
     # map to the original participants group
-    r.each {|group, count| partCounts[group] = count}
+    lgroup.each {|group, count| partCounts[group] = count}
 
     return partCounts
   end
+
+  # the group with the smallest number of current answers should be the assigned listenergroup
+  def getListenergroupAssignment
+    lgroups = getListenergroupParticipants
+    return lgroups.index(lgroups.min)
+  end
+
+
 
   # here 1 is taken from listener group and trackID
   # to return to zero indexing
   # get order systems are to be played in
   # ['system', ...]
-  def subjectOrdering(participant)
-    return latinsquare[participant.listenergroup].map{|sID|  subjects[sID-1]} 
+  def subjectOrdering(listenergroup)
+    return latinsquare[listenergroup].map{|sID|  subjects[sID-1]} 
   end
 
     # get the file and system together
     # ['system/fileloc', ...]
-  def getPlaylist(participant)
-    return subjectOrdering(participant).zip(pool_links).map{|sub,file| File.join(sub,file)}
+  def getPlaylist(listenergroup)
+    return subjectOrdering(listenergroup).zip(pool_links).map{|sub,file| File.join(sub,file)}
 
   end
 
-  def getFile(participant, index)
-    return self.getPlaylist(participant)[index]
+  def getFile(listenergroup, index)
+    return self.getPlaylist(listenergroup)[index]
   end
 
   def getClip(index)
-    pool_links[index%latinSqSize]
+    pool_links[index%pool_links.count]
   end
 
   def latinSqSize
     return subjects.count
   end
 
-  def getSystem(participant, index)
-    return subjectOrdering(participant)[index]
+  # return the system which is the subject of this question
+  def getSystem(submission, index)
+    return subjectOrdering(submission)[index]
   end
 
   # load the latin square for this section

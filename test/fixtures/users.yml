@@ -4,10 +4,10 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: 
+u_one: 
   email: 'poulter7@gmail.com'
   usergroup: 'V' 
-two: 
+u_two: 
   email: 'poulter7@googlemail.com'
   usergroup: 'V' 
 #

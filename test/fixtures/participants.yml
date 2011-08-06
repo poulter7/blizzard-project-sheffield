@@ -1,13 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 # Pariticpants
-one: 
-  user: one
-  section: default
-  listenergroup: 0
-  answers: <%=[1,2,3,nil]%> 
+p_one: 
+  user: u_one
+  listeningtest: default
 
-two: 
-  user: two
-  section: default
-  listenergroup: 2 
+p_two: 
+  user: u_two
+  listeningtest: default

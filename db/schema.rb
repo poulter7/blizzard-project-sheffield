@@ -10,18 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110803233436) do
+ActiveRecord::Schema.define(:version => 20110805174725) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "participant_id"
+    t.integer  "section_id"
+    t.integer  "listenergroup"
+    t.string   "answer_list"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "listeningtests", :force => true do |t|
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "participants", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "section_id"
-    t.integer  "listenergroup"
+    t.integer  "listeningtest_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "answers"
@@ -30,12 +37,6 @@ ActiveRecord::Schema.define(:version => 20110803233436) do
   create_table "questions", :force => true do |t|
     t.string   "text"
     t.boolean  "alphanumeric"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "resources", :force => true do |t|
-    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -76,7 +77,6 @@ ActiveRecord::Schema.define(:version => 20110803233436) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
-    t.integer  "listenergroup"
     t.string   "usergroup"
   end
 

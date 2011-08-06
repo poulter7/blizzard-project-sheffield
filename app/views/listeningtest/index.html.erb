@@ -1,0 +1,19 @@
+<h2>Listening Test</h2>
+
+<% if @participants.blank? %>
+You are not a member of any listening tests
+<% else %>
+
+  <%@participants.each do |p|%>
+    <%lt = p.listeningtest%>
+    <%sections = Section.find_all_by_listeningtest_id(lt.id)%>
+    <p>Current sections: </p>
+    <%sections.each do |s|%>
+      <li><%= link_to "Section #{s.id}", s %> <%=
+      #p.answeredCount
+      %>/<%=s.latinSqSize%>
+      </ul>
+    <%end%>
+  <%end%>
+
+<%end%>

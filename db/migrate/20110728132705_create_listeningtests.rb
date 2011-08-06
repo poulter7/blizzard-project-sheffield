@@ -1,8 +1,8 @@
 class CreateListeningtests < ActiveRecord::Migration
   def self.up
     create_table :listeningtests do |t|
-      t.references :user
       t.timestamps
+      # keep some record of who is banned from participating
     end
   end
 

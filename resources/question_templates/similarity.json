@@ -1,0 +1,31 @@
+{ "task": {
+	"taskbrief": [
+		{"text": "In each part of this section you will be able to listen to 4 sentences spoken by the same voice and also to one other new sentence. You will choose a score that expresses your opinion of <b>how similar the voice in the new sentence sounds to the voice in the 4 reference sentences.</b>"}
+
+	],
+	"taskintroduction":[
+		{"text": "Here are the same four reference samples that you heard before.You can listen to them again if you want to."}
+	],
+	"taskcontent": [
+		{"text": "Listen to the four reference sentences :"},
+		{"soundclip": {
+			"synth": "natural",
+			"clip": "news/001c020l.wav"
+			}},
+		{"soundclip":  {
+			"synth": "natural",
+			"clip": "news/001c0202.wav",
+			"playonce": "true"
+			}},
+		{"soundclip": {
+			"synth": "natural",
+			"clip": "news/001c0212.wav"
+			}},
+		{"text": "Then listen to the new sentence below : "},
+		{"soundclip": {
+				
+			}},
+		{"text": "Then choose a score that defines how close the voice of this last sentence sounds to the voice of the references above. The scale is from 1 [Sounds like a totally different person] to 5 [Sounds like exactly the same person]."},
+		{"answer": "five-point-scale"}
+	]
+}}
