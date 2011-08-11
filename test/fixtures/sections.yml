@@ -16,3 +16,5 @@ s_three:
   question_template: 'resources/one.question' 
   pool_links: ['news/001c0202.wav', 'news/001c022e.wav']
   subjects: ['sd100', 'sd1000', 'sd2000']
+
+s_four: {}

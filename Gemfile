@@ -36,7 +36,7 @@ group :development, :test do
   gem 'nokogiri'
   gem 'cucumber'
   gem 'cucumber-rails'
-  gem 'webrat'
+#  gem 'webrat'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'escape_utils'

@@ -21,6 +21,7 @@ Blizzard::Application.routes.draw do
   end
   resources :answer
   resources :participant
+  resources :user
 
   resources :listeningtest
 
@@ -64,6 +65,8 @@ Blizzard::Application.routes.draw do
   match "/users" => "user#list"
   match "/turk" => "base#turk"
   match "/taskrender" => "base#taskrender"
+  match "/amazon" => "amazon#welcome"
+  match "/amazon/outside" => "amazon#outside"
 
 #  match "/register" => "devise/users#new"
   # to a user this is going to be a "test" this is the only place "test should be used

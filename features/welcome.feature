@@ -15,5 +15,3 @@ Feature: Welcome
 		Then I should see "Welcome"
 		And I should see "Continue to testing"
 		And I should see "Logout"
-
-

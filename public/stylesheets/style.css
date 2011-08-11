@@ -1,0 +1,24 @@
+body {margin:0;  font:normal 16px "Helvetica Neue", Helvetica, Arial, sans-serif;color:#484848; }
+div.page,div.header, div.footer{margin: 0 auto; width:864px; padding-left: 10px; padding-right: 10px}
+div.header {color:#FFF}
+div.header-bar{
+  background-color:#019BE3; margin:0px; border-bottom-style:solid; border-bottom-color:747474; border-bottom-width:1px;
+  height:100px; padding 0px
+}
+div.header-box-left, div.header-box-right{padding-top:20px; height:80px; }
+div.header-box-right{float:right; text-align: right; }
+div.left, div.header-box-left {float:left; }
+div.right {float:right; }
+div.jp-wrap{}
+{padding-left: 10px; padding-right: 10px; }
+
+.jose, h1, h2, div.header, div.title {font-family: 'Josefin Slab', sans-serif; }
+div.title{font-weight: 700; font-size:xx-large; }
+div.login{font-size:large; }
+div.footer {font-family: 'Josefin Slab', sans-serif; font-weight: 400; padding-top:10px}
+div.page   {font-family: 'Droid Sans', sans-serif; }
+div.brief  {border-style:solid; padding:12px; padding-top:0px; border-color:#019BE3 }
+
+a {color:#960808}
+a:visited {color:#960808}
+a:hover {color:#FF0E0E}
