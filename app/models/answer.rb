@@ -4,6 +4,14 @@ class Answer < ActiveRecord::Base
   serialize  :answer_list
 
   def answered_count
-    answer_list.count{|a|!a.nil?}
+    return self.answer_list.count{|a|!a.nil?}
+  end
+
+  def isanswered?(index)
+    self.answer_list[index]
+  end
+
+  def iscompleted?
+
   end
 end

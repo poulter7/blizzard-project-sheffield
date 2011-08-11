@@ -1,0 +1,23 @@
+<h2>User: <%=@user.email%></h2>
+<%@participants = Participant.find_all_by_user_id(@user.id) %>
+
+<% if @participants.blank? %>
+  This user has not taken part in any tests
+<% else %>
+  <%@participants.each do |p| %>
+    Participated in listening test id: <%=p.listeningtest.id%><br/>
+    <% @sections = p.listeningtest.sections%>
+    <% if @sections %>
+      <ul>
+    <% end%>
+    <% @sections.each do |s|%>
+      <% answer = Answer.where(:participant_id => p.id, :section_id => s.id).first %>
+      <%if answer%>
+        <li>Section <%=(s.index + 1) %> <%=answer.answered_count %>/<%=s.latinSqSize%></li>
+      <%end%>
+    <%end%>
+    <% if @sections %>
+      </ul>
+    <%end%>
+  <% end %>
+<%end%>

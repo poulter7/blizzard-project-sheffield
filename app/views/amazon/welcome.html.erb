@@ -1,0 +1,20 @@
+<h2>Welcome</h2>
+<%
+  # TODO add a sound clip to the welcome page
+%>
+<%=
+  params
+%>
+
+<%=render :partial => 'base/intro'%>
+<%
+
+%>
+<p>
+Thank you for accepting this HIT.
+</p>
+<%= form_tag("https://workersandbox.mturk.com", :method => "get") do %>
+  <%=text_field_tag 'assignmentId', params[:assignmentId]%>
+  <%=submit_tag("Submit") %>
+  <%=%>
+<%end%>

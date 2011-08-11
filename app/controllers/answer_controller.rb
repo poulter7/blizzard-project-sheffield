@@ -4,8 +4,10 @@ class AnswerController < ApplicationController
   def update
     answer = Answer.find_by_id(params[:id])
     ans = answer.answer_list
-    ans[params[:index].to_i] = params[:input]
-    answer.update_attributes(:answer_list => ans)
+    if ans[params[:index].to_i].nil?
+      ans[params[:index].to_i] = params[:input]
+      answer.update_attributes(:answer_list => ans)
+    end
     section = answer.section
     nextIndex = answer.participant.currentQuestion(section)
     if nextIndex

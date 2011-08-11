@@ -1,0 +1,11 @@
+<table>
+<% User.find_all_by_usergroup(ug.second).each do |u| %>
+  <tr>
+    <% @user = u %>
+    <td width="60%"><%= @user.email%></td>
+    <td width="0%"><%= link_to '[Show]', @user%></a></td>
+  <td width="0%"><%= link_to '[Delete]', '#', :confirm => "Are you sure you wish to delete #{@user.email}?"%></td>
+    <td width="0%"><a href=#>[Block]</a></td>
+  </tr>
+<%end%>
+</table>

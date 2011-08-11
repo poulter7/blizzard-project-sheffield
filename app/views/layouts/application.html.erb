@@ -6,14 +6,28 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
   <%= yield :head %>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<%= yield %>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= render 'devise/menu/login_items' %>
+<div class="header-bar">
+  <div class="header">
+    <div class="header-box-left title">
+      Blizzard Challenge 2011
+    </div>
+    <div class="header-box-right">
+      <%= render 'devise/menu/login_items' %>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <span class="notice"><%= notice %></span>
+  <span class="alert"><%= alert %></span>
+</div>
+<div class="page">
+  <%= yield %>
+</div>
         
 </body>
 </html>

@@ -25,7 +25,7 @@ def display_soundclip(sc)
     @variantKey=@variantKey.succ
   end
   %><%=
-  render :partial => 'player', :object => sc, :locals => {:player_counter => @playcounter, :synth => synth, :variable => variable, :location => location}
+  render :partial => 'base/player', :object => sc, :locals => {:player_counter => @playcounter, :synth => synth, :variable => variable, :location => location}
   %><%
   @playcounter+=1
 end
@@ -55,18 +55,26 @@ end
 %>
 <% @taskDescription=JSON.parse(File.read(@section.question_template))['task']%>
 
-<% # if this is the first question of this section give an intro
-  if params[:index].to_i == 0 %>
-
-<!-- task brief -->
-<h2>Task Brief</h2>
-<% @taskDescription['taskbrief'].each do |t|%>
-  <% display t %><br/>
-<% end%>
+<% if @answer.isanswered?(@questionIndex) %>
+  <p>
+  You have already attempted this question: <%=link_to 'next question', @section%>
+  </p>
 <% end %>
 
+<% if params[:index].to_i == 0 %>
+  <div class="brief">
+    <h2>Task Brief:</h2>
+    <!-- task brief -->
+    <% @taskDescription['taskbrief'].each do |t|%>
+      <% display t %><br/>
+    <% end%>
+  </div>
+<% end %>
+
+
+<h2>Question <%=@questionIndex+1%>/<%=@section.latinSqSize%>:</h2>
 <!-- task output -->
-<h2>Task content</h2>
 <% @taskDescription['taskcontent'].each do |t|%>
-    <%=display t %><br/>
+    <%display t %><br/>
 <% end %>
+

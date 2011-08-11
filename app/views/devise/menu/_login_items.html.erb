@@ -1,4 +1,10 @@
+<div class="login">
 <% if user_signed_in? %>
-   <%= link_to('Logout', destroy_user_session_path) %>        
+  Signed in as: <%=warden.user.email%></br>
+  <%unless request.path_parameters[:controller]== 'base' && request.path_parameters[:action]=='index'%>
+    <%= link_to('Home', root_path) %>
+  <%end%>
+   <%= link_to('Logout', destroy_user_session_path) %>
+<%else%>
 <% end %>
-
+</div>
