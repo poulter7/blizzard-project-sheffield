@@ -4,6 +4,7 @@ class Answer < ActiveRecord::Base
   serialize  :answer_list
 
   def answered_count
+    puts answer_list
     return self.answer_list.count{|a|!a.nil?}
   end
 

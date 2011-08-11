@@ -11,9 +11,9 @@ test = Listeningtest.create()
 pool_links = ['news/001c0n0u.wav','news/001c0212.wav','news/001c0n0u.wav','news/001c0212.wav']
 subjects = ['sd2000','sd100','sd1000']
 subjects2 = ['sd2000','sd100','sd1000', 'siS2000', 'natural']
-Section.create(:listeningtest_id => test.id, :question_template => 'resources/question_templates/similarity.json', :pool_links => pool_links, :subjects => subjects)
-Section.create(:listeningtest_id => test.id, :question_template => 'resources/question_templates/similarity.json', :pool_links => pool_links, :subjects => subjects2)
-Section.create(:listeningtest_id => test.id, :question_template => 'resources/question_templates/natural.json', :pool_links => pool_links, :subjects => subjects2)
-Section.create(:listeningtest_id => test.id, :question_template => 'resources/question_templates/street.json', :pool_links => pool_links, :subjects => subjects2)
-Section.create(:listeningtest_id => test.id, :question_template => 'resources/question_templates/repeat.json', :pool_links => pool_links, :subjects => subjects2)
+Section.create(:index => 0, :listeningtest_id => test.id, :question_template => 'resources/question_templates/similarity.json', :pool_links => pool_links, :subjects => subjects)
+Section.create(:index => 1, :listeningtest_id => test.id, :question_template => 'resources/question_templates/similarity.json', :pool_links => pool_links, :subjects => subjects2)
+Section.create(:index => 2, :listeningtest_id => test.id, :question_template => 'resources/question_templates/natural.json', :pool_links => pool_links, :subjects => subjects2)
+Section.create(:index => 3, :listeningtest_id => test.id, :question_template => 'resources/question_templates/street.json', :pool_links => pool_links, :subjects => subjects2)
+Section.create(:index => 4, :listeningtest_id => test.id, :question_template => 'resources/question_templates/repeat.json', :pool_links => pool_links, :subjects => subjects2)
 

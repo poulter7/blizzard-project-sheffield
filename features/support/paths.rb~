@@ -15,20 +15,20 @@ module NavigationHelpers
        amazon_path
      when /^(?:the )users page$/
        users_path
-     when /^the sign (.*) page$/
-       case $1
-          when 'out'
-	     destroy_user_session_path
-	  when 'in'
-	     user_session_path
-	  when 'up'
-             new_user_session_path
-       end
-       # Add more mappings here.
-       # Here is an example that pulls values out of the Regexp:
-       #
-       #   when /^(.*)'s profile page$/i
-       #     user_profile_path(User.find_by_login($1))
+    when /^the sign (.*) page$/
+      case $1
+      when 'out'
+	destroy_user_session_path
+      when 'in'
+	user_session_path
+      when 'up'
+	new_user_session_path
+      end
+    # Add more mappings here.
+    # Here is an example that pulls values out of the Regexp:
+    #
+    #   when /^(.*)'s profile page$/i
+    #     user_profile_path(User.find_by_login($1))
 
     else
       begin
@@ -38,7 +38,6 @@ module NavigationHelpers
       rescue NoMethodError, ArgumentError
 	raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
 	  "Now, go and add a mapping in #{__FILE__}"
-      end
     end
   end
 end
