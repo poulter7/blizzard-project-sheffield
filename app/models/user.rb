@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
       self.password_confirmation="password"
       # FIXME this will set all users as volunteers
       self.usergroup='V'
+      self.blocked=0
   end
 
   # Once the user has been created add them as a paricipant to the default test and assign a listener group

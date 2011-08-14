@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110805174725) do
+ActiveRecord::Schema.define(:version => 20110811044714) do
 
   create_table "answers", :force => true do |t|
     t.integer  "participant_id"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20110805174725) do
     t.datetime "updated_at"
     t.boolean  "admin"
     t.string   "usergroup"
+    t.boolean  "blocked"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

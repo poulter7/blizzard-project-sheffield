@@ -21,7 +21,9 @@ Blizzard::Application.routes.draw do
   end
   resources :answer
   resources :participant
-  resources :user
+  resources :user do
+    get 'block'
+  end
 
   resources :listeningtest
 
