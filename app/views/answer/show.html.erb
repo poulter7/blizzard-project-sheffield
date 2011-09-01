@@ -41,7 +41,7 @@ def display(input)
   in_content = input.first.second
   case in_type
     when "text"
-      %><%=in_content%><%
+      %><%=in_content.html_safe%><%
       return nil
     when "soundclip"
       display_soundclip(in_content)
@@ -62,12 +62,14 @@ end
 <% end %>
 
 <% if params[:index].to_i == 0 %>
-  <div class="brief">
-    <h2>Task Brief:</h2>
-    <!-- task brief -->
-    <% @taskDescription['taskbrief'].each do |t|%>
-      <% display t %><br/>
-    <% end%>
+  <div class="row">
+    <div class="span14 columns brief">
+      <h2>Task Brief:</h2>
+      <!-- task brief -->
+      <% @taskDescription['taskbrief'].each do |t|%>
+        <% display t %>
+      <% end%>
+    </div>
   </div>
 <% end %>
 
@@ -75,6 +77,10 @@ end
 <h2>Question <%=@questionIndex+1%>/<%=@section.latinSqSize%>:</h2>
 <!-- task output -->
 <% @taskDescription['taskcontent'].each do |t|%>
-    <%display t %><br/>
+    <div class="row">
+      <div class="span14 columns">
+        <%display t %>
+      </div>
+    </div>
 <% end %>
 

@@ -1,10 +1,19 @@
-<h2>User list</h2>
-<%= form_for User.new do |u|%>
-  <% User::USER_GROUPS.each do |ug| %>
-    <h3><%=ug.first%></h3>
-    <%if ug.second!='A'%>
-      <p>
+<div class="row">
+  <div class="span16 columns">
+    <h2>User list</h2>
+    <%= form_for User.new do |u|%>
+      <ul class="unstyled">
+        <% User::USER_GROUPS.each do |ug| %>
+          <%if ug.second!='A'%>
+            <li class="active">
+            <!--  <a href="#">-->
+              <strong><%=ug.first%></strong>
+            <!--  </a>-->
+            </li>
+          <%end%>
+          <%= render :partial => 'userlist', :locals => {:ug => ug} %>
+        <%end%>
+      </ul>
     <%end%>
-    <%= render :partial => 'userlist', :locals => {:ug => ug} %>
-  <%end%>
-<%end%>
+  </div>
+</div>

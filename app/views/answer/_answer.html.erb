@@ -1,6 +1,7 @@
 <% # create a form for the participant
    # TODO include definable point scale
  %>
+ <div class="actions">
  <% htmlopts = {:disabled => answer.isanswered?(index)}%>
   <%= form_for answer do |a|%>
     <%case answerType
@@ -20,5 +21,6 @@
     <%end%>
 
     <%= hidden_field_tag 'index', index %>
-    <%= a.submit 'Submit response', htmlopts%>
+    <%= a.submit 'Submit response', htmlopts.merge({:class => 'btn primary'})%>
+  </div>
   <%end%>

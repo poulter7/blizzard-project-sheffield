@@ -1,10 +1,13 @@
-<table>
+<div class="row">
+  <div class="span16 columns">
+    <table>
 <% User.find_all_by_usergroup(ug.second).each do |u| %>
   <tr>
     <% @user = u %>
     <% bl = @user.blocked %>
-    <% color = 'blocked' if bl %>
-    <td width="300px"><span class="<%=color%>"><%= @user.email%></span></td>
+    <td width="300px">
+      <%if bl%><del><%= @user.email%></del><%else%><%=@user.email%><%end%>
+    </td>
     <td width="0%"><%= link_to '[Show]', @user%></a></td>
     <td width="0%"><%= link_to '[Delete]', {:controller => :user, :action => :destroy, :id => @user.id }, :method => :delete, :confirm => "Are you sure you wish to delete #{@user.email}?"%></td>
     <td width="0%">
@@ -16,3 +19,5 @@
   </tr>
 <%end%>
 </table>
+</div>
+</div>
