@@ -1,10 +1,18 @@
-<h2>Welcome</h2>
-<% if !user_signed_in? %>
-  <p>Would you like to </p>
-  <%= link_to 'Sign in', new_user_session_path  %><br/>
-  <%= link_to 'Sign up', new_user_registration_path  %>
-<% else %>
-  <%= link_to 'Continue to testing ', listeningtest_index_path %>
+<section id="Welcome">
+  <div class="page-header">
+    <h2>Welcome</h2>
+  </div>
+  <div class="row">
+    <div class="span16 columns">
+      <% if !user_signed_in? %>
+        <p>Would you like to </p>
+        <%= link_to 'Sign in', new_user_session_path  %><br/>
+        <%= link_to 'Sign up', new_user_registration_path  %>
+      <% else %>
+        Please <%= link_to 'continue to testing ', listeningtest_index_path %>.
 
-<% end %>
+      <% end %>
+    </div>
 
+  </div>
+</section>

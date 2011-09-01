@@ -22,11 +22,19 @@
     </div>
   </div>
 </div>
-<div class="footer">
-  <span class="notice"><%= notice %></span>
-  <span class="alert"><%= alert %></span>
-</div>
-<div class="page">
+<div class="container">
+  <section id="alerts">
+    <% if !notice.blank? %>
+      <div class="alert-message success"><%= notice %>
+        <!--  <a class="close" href="#">×</a>-->
+      </div>
+    <% end %>
+    <% if !alert.blank? %>
+      <div class="alert-message error"><%= alert %>
+        <!--  <a class="close" href="#">×</a>-->
+      </div>
+    <% end %>
+  </section>
   <%= yield %>
 </div>
         

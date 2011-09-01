@@ -14,13 +14,13 @@ div.jp-wrap{}
 
 .jose, h1, h2, div.header, div.title {font-family: 'Josefin Slab', sans-serif; }
 div.login{font-size:large; }
-div.footer {font-family: 'Josefin Slab', sans-serif; font-weight: 400; padding-top:10px}
 div.page   {font-family: 'Droid Sans', sans-serif; }
 div.brief  {border-style:solid; padding:12px; padding-top:0px; border-color:#019BE3 }
 
 #head,.title{font-weight: 700; font-size:xx-large; color:#FFF; text-decoration:none}
-a {color:#960808}
+/*a {color:#960808}
 a:visited {color:#960808}
 a:hover {color:#FF0E0E}
 
 .blocked {color: #CCC}
+*/
