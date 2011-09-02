@@ -1,19 +1,19 @@
 <div class="row">
   <div class="span16 columns">
     <h2>User list</h2>
-    <%= form_for User.new do |u|%>
-      <ul class="unstyled">
+    <ul class="tabs">
         <% User::USER_GROUPS.each do |ug| %>
-          <%if ug.second!='A'%>
+          <%if ug.second==params['id']%>
             <li class="active">
-            <!--  <a href="#">-->
-              <strong><%=ug.first%></strong>
-            <!--  </a>-->
-            </li>
+          <% else %>
+            <li>
           <%end%>
-          <%= render :partial => 'userlist', :locals => {:ug => ug} %>
-        <%end%>
-      </ul>
+              <strong><%=link_to ug.first, :id => ug.second%></strong>
+            </li>
     <%end%>
+    </ul>
+    <%=
+      render :partial => 'userlist', :locals => {:ug => params['id']} 
+    %>
   </div>
 </div>
