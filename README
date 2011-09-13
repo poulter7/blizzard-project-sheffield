@@ -2,7 +2,10 @@ To install dependencies for nokogiri check out:
 http://nokogiri.org/tutorials/installing_nokogiri.html
 
 or on Ubuntu (8.10 or later) run:
-sudo apt-get install libxslt-dev libxml2-dev
+sudo apt-get install libxslt-dev libxml2-
+
+The correct database driver:
+sudo apt-get install libsqlite3-dev 
 
 == Welcome to Rails
 
