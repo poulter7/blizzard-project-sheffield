@@ -11,6 +11,8 @@ class AmazonController < ApplicationController
       # the Turker hasn't accepted the hit as yet
       render :turk
     else 
+      # the viewer is from Amazon and has a valid workerID, set them up a user
+      amazonUser = User.find_or_create_by_email("#{workerId}@amazonturk.user"){ |u| u.usergroup = "A"}
       render :welcome
     end
 

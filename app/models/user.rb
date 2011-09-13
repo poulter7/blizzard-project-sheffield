@@ -19,7 +19,11 @@ class User < ActiveRecord::Base
       self.password="password"
       self.password_confirmation="password"
       # FIXME this will set all users as volunteers
-      self.usergroup='V'
+      if usergroup?
+        self.usergroup = usergroup
+      else
+        self.usergroup='V'
+      end
       self.blocked=0
   end
 
