@@ -30,15 +30,22 @@ class User < ActiveRecord::Base
   # Once the user has been created add them as a paricipant to the default test and assign a listener group
   after_create do
 
-
     test = Listeningtest.find(:all)[0]
-    if test.nil?
-      # Seed the database with defaults
-      require Rails.root.join('db','seeds.rb')
-      test = Listeningtest.find(:all)[0]
-    end
 
+    #if self.usergroup == 'V' 
+      if test.nil?
+        # Seed the database with defaults
+        require Rails.root.join('db','seeds.rb')
+        test = Listeningtest.find(:all)[0]
+      end
+
+    #else
+      # select the listening test which corresponds to the ID
+
+
+    #end
     Participant.create(:user_id => self.id, :listeningtest_id => test.id)
+
   end
 
 

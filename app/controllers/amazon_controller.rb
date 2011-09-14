@@ -20,3 +20,4 @@ class AmazonController < ApplicationController
     # else present a welcome page
   end
 end
+
