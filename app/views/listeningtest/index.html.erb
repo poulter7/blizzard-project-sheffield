@@ -4,27 +4,9 @@
     <h2>Listening Test</h2>
   </div>
   <div class="span16 columns">
-    <% if @participants.blank? %>
-    You are not a member of any listening tests
-    <% else %>
-
-      <%@participants.each do |p|%>
-        <%lt = p.listeningtest%>
-        <%sections = Section.find_all_by_listeningtest_id(lt.id)%>
-        <p>Current sections: </p>
-        <%sections.each do |s|%>
-          <% ans = Answer.where(:participant_id => p.id, :section_id => s.id).first.answered_count
-          tot = s.latinSqSize
-          if ans < tot
-          %>
-            <li><%= link_to "Section #{s.id}", s %> <%=ans%>/<%=tot%>
-          <%else%>
-            <li><%= "Section #{s.id} #{tot}/#{tot}"%>
-          <%end%>
-          </ul>
-        <%end%>
-      <%end%>
-
-    <%end%>
+    <%=
+      render :partial => "testlist"
+    %>
   </div>
+</div>
 </section>

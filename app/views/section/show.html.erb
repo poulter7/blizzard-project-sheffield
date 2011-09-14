@@ -3,20 +3,8 @@
 <ul>
 <% @section.latinSqSize.times do |i|%>
   <li>
-  <%
-    # if !q.answered
-  %>
     <% t = Task.create %>
     <%= link_to "Question #{i+1}", [@section,t] %>
-  <%
-  #else
-%>
-    <%=
-      # "Question #{i+1}" 
-    %>
-  <%
-    #end
-  %>
   </li>
 <% end %>
 </ul>
