@@ -68,7 +68,11 @@ Blizzard::Application.routes.draw do
   match "/turk" => "base#turk"
   match "/taskrender" => "base#taskrender"
   match "/amazon" => "amazon#welcome"
+ 
+  # different reactions to queries which are made to the amazon page
   match "/amazon/outside" => "amazon#outside"
+  match "/amazon/pending" => "amazon#pending"
+  match "/amazon/task" => "amazon#task"
 
 #  match "/register" => "devise/users#new"
   # to a user this is going to be a "test" this is the only place "test should be used

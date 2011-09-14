@@ -1,7 +1,7 @@
 class Participant < ActiveRecord::Base
   belongs_to :user
   belongs_to :listeningtest
-  serialize :listenergroup
+  serialize  :listenergroup
 
   after_create do
     # place the participant into a listening group
