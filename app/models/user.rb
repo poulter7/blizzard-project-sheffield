@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   # attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :email
+  validates_uniqueness_of :email
+
+
 
   # passwords are not used so just user a default password
   before_validation(:on => :create) do
