@@ -14,7 +14,13 @@ class AnswerTest < ActiveSupport::TestCase
 
   test "answered" do
     @a_one.answer_list = ['abc',nil,nil]
-    assert  @a_one.isanswered?(0) == true
-    assert  @a_one.isanswered?(1) == false
+    assert  @a_one.answered?(0) == true
+    assert  @a_one.answered?(1) == false
+  end
+
+  test "completed" do
+    assert @a_one.completed?
+    @a_one.answer_list = ['abc',nil,nil]
+    assert !@a_one.completed?
   end
 end

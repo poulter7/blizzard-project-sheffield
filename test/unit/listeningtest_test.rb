@@ -13,4 +13,18 @@ class ListeningtestTest < ActiveSupport::TestCase
     assert ss.include?(sections(:s_three))
     assert !ss.include?(sections(:s_four))
   end
+
+  test "answer lists" do
+    as = @default.answers_from(participants(:p_one))
+    assert as.include?(answers(:a_one))
+    assert as.include?(answers(:a_two))
+    assert !as.include?(answers(:a_two_a))
+
+  end
+
+  test "completed listening test identified" do
+    p = participants(:p_two)
+    l = p.listeningtest
+    assert l.completed_by?(p) == true
+  end
 end

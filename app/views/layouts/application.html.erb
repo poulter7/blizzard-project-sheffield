@@ -23,18 +23,20 @@
   </div>
 </div>
 <div class="container">
-  <section id="alerts">
-    <% if !notice.blank? %>
-      <div class="alert-message success"><%= notice %>
-        <!--  <a class="close" href="#">×</a>-->
-      </div>
-    <% end %>
-    <% if !alert.blank? %>
-      <div class="alert-message error"><%= alert %>
-        <!--  <a class="close" href="#">×</a>-->
-      </div>
-    <% end %>
-  </section>
+  <div class="row">
+    <section id="alerts">
+      <% if !notice.blank? %>
+        <div class="alert-message success"><%= notice %>
+          <!--  <a class="close" href="#">×</a>-->
+        </div>
+      <% end %>
+      <% if !alert.blank? %>
+        <div class="alert-message error"><%= alert %>
+          <!--  <a class="close" href="#">×</a>-->
+        </div>
+      <% end %>
+    </section>
+  </div>
   <%= yield %>
 </div>
         
