@@ -29,7 +29,8 @@ class AmazonController < ApplicationController
       @participants = Participant.find_all_by_user_id(amazonUser.id)
 
       sign_in(amazonUser)    
-      redirect_to :controller => 'listeningtest', :action => 'index'
+#      redirect_to :controller => 'listeningtest', :action => 'index'
+      render 'listeningtest/index'
     end
 
   end

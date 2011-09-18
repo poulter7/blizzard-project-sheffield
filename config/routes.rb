@@ -4,6 +4,7 @@ Blizzard::Application.routes.draw do
 
   match "section/:section_id/answer/:index/answer" => "answer#answer", :as => 'answer_section_task'
   match "/listeningtest/completed" => "listeningtest#completed"
+
   get "base/index"
   get "base/turk"
   get "base/taskrender"

@@ -2,18 +2,18 @@
    # TODO include definable point scale
  %>
  <div class="actions">
- <% htmlopts = {:disabled => answer.isanswered?(index)}%>
+ <% htmlopts = {:disabled => answer.answered?(index)}%>
   <%= form_for answer do |a|%>
     <%case answerType
         when "text-field"%>
           <!-- text field -->
-          <%= text_field_tag 'input' , htmlopts%>
+          <%= text_field_tag 'input' %>
         <%when "five-point-scale"%>
           <!-- five point scale -->
-          <%= select_tag 'input', options_from_collection_for_select(1..5, 'to_i','to_i'), htmlopts%>
+          <%= select_tag 'input', options_from_collection_for_select(1..5, 'to_i','to_i')%>
         <%when "text-area"%>
           <!-- text area -->
-          <%= text_area_tag 'input', htmlopts%>
+          <%= text_area_tag 'input' %> 
         <%when "variants"%>
             <!-- an option for each variant -->
             <%=select_tag 'input', options_from_collection_for_select(variants.collect{|v| [v['alpha']]}, :first, :first, htmlopts)

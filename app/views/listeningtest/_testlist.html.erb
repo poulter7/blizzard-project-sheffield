@@ -1,24 +1,30 @@
 <% if @participants.blank? %>
 You are not a member of any listening tests
 <% else %>
-
-  <%@participants.each do |p|%>
-
-      <p>Current sections: </p>
-      <ul>
-      <%
-        p.listeningtest.sections.each do |s|
-          ans = Answer.where(:participant_id => p.id, :section_id => s.id).first.answered_count
-          tot = s.latinSqSize
-          if ans < tot
-          %>
-            <li><%= link_to "Section #{s.id}", s %> <%=ans%>/<%=tot%>
-          <%else%>
-            <li><%= "Section #{s.id} #{tot}/#{tot}"%>
-          <%end%>
-          </li>
+  <dl>
+  <%@participants.each_with_index do |p, index|%>
+    <dt>Test <%=index+1%></dt>
+    <dd>
+    <%if p.listeningtest.completed_by?(p)%>
+      Completed
+    <%else%>
+        <p>Current sections: </p>
+        <ul>
+        <%
+          p.listeningtest.sections.each do |s|
+            ans = Answer.where(:participant_id => p.id, :section_id => s.id).first.answered_count
+            tot = s.latinSqSize
+            if ans < tot
+            %>
+              <li><%= link_to "Section #{s.id}", s %> <%=ans%>/<%=tot%>
+            <%else%>
+              <li><%= "Section #{s.id} #{tot}/#{tot}"%>
+            <%end%>
+            </li>
+      <%end%>
+      </ul>
     <%end%>
-    </ul>
+    </dd>
   <%end%>
 
 <%end%>

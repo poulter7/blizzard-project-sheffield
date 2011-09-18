@@ -55,7 +55,7 @@ end
 %>
 <% @taskDescription=JSON.parse(File.read(@section.question_template))['task']%>
 
-<% if @answer.isanswered?(@questionIndex) %>
+<% if @answer.answered?(@questionIndex) %>
   <p>
   You have already attempted this question: <%=link_to 'next question', @section%>
   </p>
