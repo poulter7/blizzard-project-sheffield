@@ -1,8 +1,8 @@
 body {margin:0;  font:normal 16px "Helvetica Neue", Helvetica, Arial, sans-serif;color:#484848; }
 div.page,div.header, div.footer{margin: 0 auto; width:960px}
 div.header {color:#FFF}
-div.header-bar{  background-color:#019BE3; margin:0px; margin-bottom:10px; border-bottom-style:solid; border-bottom-color:747474; border-bottom-width:1px;  height:100px; padding 0px }
-div.header-box-left, div.header-box-right{padding-top:20px; height:80px; }
+div.header-bar{  background-color:#019BE3; margin:0px; margin-bottom:10px; border-bottom-style:solid; border-bottom-color:747474; border-bottom-width:1px;  height:70px; padding 0px }
+div.header-box-left, div.header-box-right{padding-top:20px; height:0px; }
 div.header-box-right{float:right; text-align: right; }
 div.left, div.header-box-left {float:left; }
 div.right {float:right; }

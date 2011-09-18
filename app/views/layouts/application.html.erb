@@ -20,9 +20,11 @@
     <div class="header-box-left">
       <%= link_to 'Blizzard Challenge 2011', root_path, {:class => "title", :id => "head"}%><span>
     </div>
+    <% if user_signed_in? && warden.user.usergroup != 'A'%>
     <div class="header-box-right">
       <%= render 'devise/menu/login_items' %>
     </div>
+    <%end%>
   </div>
 </div>
 <%
